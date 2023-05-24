@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  final Color primary = const Color(0xFF438883);
-  final Color onPrimary = Colors.white;
-  final Color secondary = const Color(0xFF438883);
-  final Color onSecondary = Colors.white70;
-  final Color background = Colors.black;
-  final Color onBackground = Colors.black;
-  final Color error = const Color(0xFFF95B51);
-  final Color onError = Colors.white;
-  final Color surface = const Color(0xFF438883);
-  final Color onSurface = Colors.white;
+  static const Color primary = Color(0xFF438883);
+  static const Color onPrimary = Colors.white;
+  static const Color secondary = Color(0xFF438883);
+  static const Color onSecondary = Colors.white70;
+  static const Color background = Colors.black;
+  static const Color onBackground = Colors.black;
+  static const Color error = Color(0xFFF95B51);
+  static const Color onError = Colors.white;
+  static const Color surface = Color(0xFF438883);
+  static const Color onSurface = Colors.white;
 
   ThemeData toTheme() {
     return ThemeData.from(
       textTheme: toTextTheme(),
-        colorScheme: ColorScheme(
+        colorScheme: const ColorScheme(
             brightness: Brightness.light,
             primary: primary,
             onPrimary: onPrimary,

@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:money_mate/screens/spash_screen.dart';
 import 'package:money_mate/themes/colors.dart';
+import 'package:money_mate/themes/styles.dart';
+import 'package:money_mate/widgets/greetings.dart';
+import 'package:money_mate/widgets/summary_card.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+AppStyle get $style => MyApp._style;
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  static final AppStyle _style = AppStyle();
 
   // This widget is the root of your application.
   @override
@@ -14,7 +22,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppColors().toTheme(),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const TestPage(),
+    );
+  }
+}
+
+class TestPage extends StatelessWidget {
+  const TestPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var size =  MediaQuery.of(context).size;
+    print(size.toString()+"....");
+    return Scaffold(
+      appBar: AppBar(title: Text("Welcome")),
+      body: Greetings(
+        size: Size(
+          size.width,
+          0.2 * size.height
+        ),
+      ),
     );
   }
 }
@@ -84,7 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             Text(
+            SummaryCard(),
+            Text(
               'You have pushed the button this many times:',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
