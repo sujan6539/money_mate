@@ -64,5 +64,5 @@ class _Dimens {
   final double _scale;
 
   late final double summaryCardWidth = 370 * _scale;
-  late final double summaryCardHeight = 150 * _scale;
+  late final double summaryCardHeight = 180 * _scale;
 }

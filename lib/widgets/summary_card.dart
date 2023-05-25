@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../main.dart';
+import '../themes/colors.dart';
 
 class SummaryCard extends StatelessWidget {
   const SummaryCard({Key? key}) : super(key: key);
@@ -8,11 +9,17 @@ class SummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: $style.insets.sm),
+      elevation: $style.insets.sm,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Container(
         width: $style.dimens.summaryCardWidth,
         height: $style.dimens.summaryCardHeight,
         padding: EdgeInsets.all($style.insets.sm),
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [AppColors.primaryDarker, AppColors.primary],
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -38,7 +45,7 @@ class SummaryCard extends StatelessWidget {
                     const Text("Income"),
                     Text(
                       '\$18,480.00',
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.titleLarge,
                     )
                   ],
                 ),
@@ -48,7 +55,7 @@ class SummaryCard extends StatelessWidget {
                     const Text("Expenses"),
                     Text(
                       '\$18,480.00',
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.titleLarge,
                     )
                   ],
                 )
