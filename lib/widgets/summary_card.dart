@@ -28,10 +28,16 @@ class SummaryCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Total Balance"),
+                const Text(
+                  "Total Balance",
+                  style: TextStyle(color: AppColors.onSurface),
+                ),
                 Text(
                   '\$2,548.00',
-                  style: Theme.of(context).textTheme.headlineLarge,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineLarge
+                      ?.copyWith(color: AppColors.onSurface),
                 ),
               ],
             ),
@@ -42,20 +48,32 @@ class SummaryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Income"),
+                    const Text(
+                      "Income",
+                      style: TextStyle(color: AppColors.onSurface),
+                    ),
                     Text(
                       '\$18,480.00',
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge
+                          ?.copyWith(color: AppColors.onSurface),
                     )
                   ],
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Expenses"),
+                    const Text(
+                      "Expenses",
+                      style: TextStyle(color: AppColors.onSurface),
+                    ),
                     Text(
                       '\$18,480.00',
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge
+                          ?.copyWith(color: AppColors.onSurface),
                     )
                   ],
                 )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../themes/colors.dart';
+
 class ItemTransaction extends StatelessWidget {
   final TransactionDetails transactionDetails;
 
@@ -8,50 +10,47 @@ class ItemTransaction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(8.0)),
-            child: const Icon(
-              Icons.person,
-              color: Colors.black,
-              size: 48,
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(8.0)),
+          child: const Icon(
+            Icons.person,
+            color: Colors.black,
+            size: 48,
+          ),
+        ),
+        const Padding(padding: EdgeInsets.symmetric(horizontal: 8.0)),
+        Column(
+          children: [
+            Text(
+              'Title',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(color: Colors.black),
             ),
-          ),
-          const Padding(padding: EdgeInsets.symmetric(horizontal: 8.0)),
-          Column(
-            children: [
-              Text(
-                'Title',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(color: Colors.black),
-              ),
-              Text(
-                'date',
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge
-                    ?.copyWith(color: Colors.grey),
-              )
-            ],
-          ),
-          const Spacer(),
-          Text(
-            "\$850",
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge
-                ?.copyWith(color: Colors.green),
-          )
-        ],
-      ),
+            Text(
+              'date',
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+                  ?.copyWith(color: Colors.grey),
+            )
+          ],
+        ),
+        const Spacer(),
+        Text(
+          "\$850",
+          style: Theme.of(context)
+              .textTheme
+              .headlineSmall
+              ?.copyWith(color: AppColors.dbBalanceColor),
+        )
+      ],
     );
   }
 }

@@ -19,7 +19,11 @@ class Header extends StatelessWidget {
       child: ClipPath(
         clipper: GreetingsClipper(),
         child: Container(
-          color: AppColors.primary,
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [AppColors.primaryDarker, AppColors.primary],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter)),
           foregroundDecoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
@@ -47,13 +51,13 @@ class GreetingsClipper extends CustomClipper<Path> {
     path.lineTo(size.width, 0);
     path.arcTo(
         Rect.fromPoints(
-          Offset(0, size.height - 160),
-          Offset(size.width, size.height - 80),
+          Offset(0, size.height - 120),
+          Offset(size.width, size.height - 60),
         ),
         0,
         pi,
         false);
-    path.lineTo(0, size.height - 160);
+    path.lineTo(0, size.height - 120);
     path.lineTo(0, 0);
     return path;
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_mate/themes/colors.dart';
 import 'package:money_mate/widgets/header.dart';
 import 'package:money_mate/widgets/summary_card.dart';
 
@@ -20,11 +21,15 @@ class Greetings extends StatelessWidget {
             Padding(padding: EdgeInsets.all($style.insets.lg)),
             Text(
               'Good afternoon',
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: AppColors.onSurface
+              ),
             ),
             Text(
               'Sujan Prajapati',
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: AppColors.onSurface
+              ),
             )
           ],
         ),
