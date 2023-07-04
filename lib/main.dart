@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_mate/screens/dashboard.dart';
-import 'package:money_mate/screens/spash_screen.dart';
 import 'package:money_mate/themes/colors.dart';
 import 'package:money_mate/themes/styles.dart';
-import 'package:money_mate/widgets/greetings.dart';
-import 'package:money_mate/widgets/header.dart';
 import 'package:money_mate/widgets/summary_card.dart';
 
 void main() {
@@ -34,9 +31,7 @@ class TestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Dashboard()
-    );
+    return Scaffold(body: Dashboard());
   }
 }
 
